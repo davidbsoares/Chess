@@ -1,4 +1,4 @@
-﻿using Board;
+﻿using Chess.Board;
 
 namespace Chess {
     class Program {
