@@ -1,4 +1,4 @@
-﻿namespace Chess.Board {
+﻿namespace Chess {
     class Board {
         public int rows { get; set; }
         public int columns { get; set; }
@@ -8,6 +8,10 @@
             this.rows = lines;
             this.columns = columns;
             pieces = new Piece[lines, columns];
+        }
+
+        public Piece piece(int rows, int columns) {
+            return pieces[rows, columns];
         }
     }
 }
