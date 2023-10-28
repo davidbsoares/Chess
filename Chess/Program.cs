@@ -1,14 +1,27 @@
-﻿using Rules;
+﻿using Pieces;
 
 namespace Chess {
     class Program {
         static void Main(string[] args) {
+            try {
+                Board board = new Board(8, 8);
 
-            Position pos = new Position('a', 1);
+                board.Add(new Tower(board, Color.Black), new InternalPosition(0, 0));
+                board.Add(new Tower(board, Color.Black), new InternalPosition(0, 7));
+                board.Add(new King(board, Color.Black), new InternalPosition(0, 2));
+                board.Add(new King(board, Color.Black), new InternalPosition(0, 4));
 
-            Console.WriteLine(pos);
-            Console.WriteLine(pos.toPosition());
 
+                board.Add(new Tower(board, Color.White), new InternalPosition(7, 0));
+                board.Add(new Tower(board, Color.White), new InternalPosition(7, 7));
+
+
+
+                Screen.Print(board);
+            }
+            catch (BoardException e) {
+                Console.WriteLine(e.Message);
+            }
             Console.ReadLine();
 
         }
