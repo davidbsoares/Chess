@@ -1,9 +1,14 @@
-﻿namespace Chess {
+﻿using Rules;
+
+namespace Chess {
     class Program {
         static void Main(string[] args) {
-            Board board = new Board(8, 8);
 
-            Screen.Print(board);
+            Position pos = new Position('a', 1);
+
+            Console.WriteLine(pos);
+            Console.WriteLine(pos.toPosition());
+
             Console.ReadLine();
 
         }
